@@ -1,0 +1,20 @@
+{
+  "name": "unit-lens",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Chrome MV3 extension that adds hover-tooltip unit conversions to measurements on any page.",
+  "license": "BSD-3-Clause",
+  "author": "Nizzan Kruvi",
+  "scripts": {
+    "test": "node test/run.js && node test/adversarial.js && node test/dom.js && node test/ui.js",
+    "test:units": "node test/run.js",
+    "test:adversarial": "node test/adversarial.js",
+    "test:dom": "node test/dom.js",
+    "test:ui": "node test/ui.js",
+    "icons": "python3 tools/make_icons.py",
+    "zip": "rm -f unit-lens.zip && zip -r unit-lens.zip manifest.json src icons -x '*.DS_Store'"
+  },
+  "devDependencies": {
+    "jsdom": "^24.0.0"
+  }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Unit Lens</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header class="head">
+    <div class="brand">
+      <span class="dot"></span>
+      <h1>Unit Lens</h1>
+    </div>
+    <label class="switch" title="Enable or disable on all pages">
+      <input type="checkbox" id="enabled" />
+      <span class="track"><span class="knob"></span></span>
+    </label>
+  </header>
+
+  <section class="block">
+    <label class="lbl" for="system">I read measurements in</label>
+    <select id="system">
+      <option value="metric">Metric (SI) — m, L, kg, °C</option>
+      <option value="us">US customary — mi, gal, lb, °F</option>
+      <option value="uk">UK / Imperial hybrid — mi, st, °C</option>
+      <option value="custom">Custom (set per category)</option>
+    </select>
+    <p class="hint" id="systemHint"></p>
+  </section>
+
+  <section class="block">
+    <div class="stat">
+      <strong id="count">—</strong>
+      <span>conversions on this page</span>
+    </div>
+    <button class="ghost" id="rescan">Rescan page</button>
+  </section>
+
+  <section class="block">
+    <label class="lbl">Show conversions as</label>
+    <div class="seg" id="trigger">
+      <button data-v="hover">Hover</button>
+      <button data-v="click">Click</button>
+      <button data-v="inline">Always inline</button>
+    </div>
+  </section>
+
+  <section class="block site">
+    <label class="lbl">This site</label>
+    <button class="ghost" id="toggleSite">—</button>
+  </section>
+
+  <footer>
+    <button class="link" id="openOptions">All settings &amp; units →</button>
+  </footer>
+
+  <script src="../lib/units.js"></script>
+  <script src="../lib/convert.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Unit Lens — test page</title>
+  <style>
+    body { max-width: 740px; margin: 0 auto; padding: 40px 20px 80px;
+           font: 15px/1.7 ui-sans-serif, -apple-system, "Segoe UI", Roboto, sans-serif;
+           color: #16181d; }
+    h1 { font-size: 24px; letter-spacing: -0.02em; }
+    h2 { margin-top: 32px; font-size: 15px; text-transform: uppercase;
+         letter-spacing: 0.05em; color: #6b7280; }
+    .card { padding: 14px 16px; border: 1px solid #e4e6ea; border-radius: 10px;
+            background: #fafafb; margin: 10px 0; }
+    .neg { border-color: #fecaca; background: #fef5f5; }
+    .neg::before { content: "must stay plain: "; font-weight: 600; color: #b91c1c;
+                   font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
+    code { background: #f0f0f3; padding: 1px 5px; border-radius: 4px; font-size: 13px; }
+    @media (prefers-color-scheme: dark) {
+      body { background: #0f1116; color: #eff0f3; }
+      .card { background: #171a20; border-color: #272b33; }
+      .neg { background: #241416; border-color: #5b2526; }
+      code { background: #1d2129; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Unit Lens test page</h1>
+  <p>Load the extension, then hover the underlined measurements. Items in red boxes are
+  traps — they must <strong>not</strong> be underlined.</p>
+
+  <h2>Distance &amp; length</h2>
+  <div class="card">The Boston Marathon is 26.2 miles, or 26 miles and 385 yards.</div>
+  <div class="card">Denali rises 20,310 ft above sea level; base camp sits at 7,200 feet.</div>
+  <div class="card">The doorway is 36 in wide and the hallway 4 ft 6 in across.</div>
+  <div class="card">He stands 6'2" and his brother is 5'11½".</div>
+  <div class="card">A nautical chart showing 12 nmi of coastline and depths to 30 fathoms.</div>
+  <div class="card">The cable run is 250 yd, with 18 mils of insulation.</div>
+
+  <h2>Area</h2>
+  <div class="card">The house is 2,400 sq ft on a 0.75 acre lot.</div>
+  <div class="card">A 12 ft x 16 ft deck plus a 48 sq ft shed.</div>
+  <div class="card">The ranch spans 1,200 acres, about 1.9 sq mi.</div>
+
+  <h2>Liquids &amp; volume</h2>
+  <div class="card">Add 2 cups of stock, 1½ tbsp of oil, and 3 tsp of vanilla.</div>
+  <div class="card">The recipe calls for 8 fl oz of cream and 1 pint of milk.</div>
+  <div class="card">The tank holds 15 gallons; we used 2 quarts of coolant.</div>
+  <div class="card">An engine displacing 350 cu in, or 5.7 L.</div>
+  <div class="card">Shipping 42 barrels, roughly 1,500 cu ft of cargo space.</div>
+
+  <h2>Weight &amp; mass</h2>
+  <div class="card">The dog weighs 62 lbs; the puppy only 14 oz.</div>
+  <div class="card">She weighs 11 st 4 lb after training.</div>
+  <div class="card">The truck hauls 2 short tons, about 4,000 lbs.</div>
+  <div class="card">A 1.5 carat stone weighing 300 mg.</div>
+
+  <h2>Temperature</h2>
+  <div class="card">Preheat the oven to 425°F, then reduce to 350 °F.</div>
+  <div class="card">It dropped to -10°F overnight and hit 98.6 degrees F by noon.</div>
+  <div class="card">Liquid nitrogen boils at 77 K.</div>
+
+  <h2>Speed, pressure, power</h2>
+  <div class="card">Cruising at 65 mph with gusts to 40 knots.</div>
+  <div class="card">Keep tires at 32 psi; the system runs at 2,000 psi.</div>
+  <div class="card">Barometer reading 29.92 inHg and falling.</div>
+  <div class="card">The engine makes 310 hp and 280 lb-ft of torque.</div>
+  <div class="card">A 1,500 BTU heater drawing 12,000 BTU/h.</div>
+  <div class="card">Rated at 24 mpg combined.</div>
+  <div class="card">A muzzle velocity of 2,800 fps.</div>
+
+  <h2>Ranges, fractions, dimensions</h2>
+  <div class="card">Expect 5-10 miles of trail and 2 to 4 inches of snow.</div>
+  <div class="card">Cut a ¾ in dowel into 2½ ft lengths.</div>
+  <div class="card">A box measuring 12 x 8 x 4 in.</div>
+
+  <h2>Traps — these must stay plain</h2>
+  <div class="card neg">We raised $5M in Series A funding last year.</div>
+  <div class="card neg">The video hit 100K views and 2 m subscribers.</div>
+  <div class="card neg">It only took 5 minutes, maybe 30 m total.</div>
+  <div class="card neg">Running version 1.2 in production since 2019.</div>
+  <div class="card neg">There are only 3 in stock; 4 in 10 shoppers left.</div>
+  <div class="card neg">He scored 25 points and hit a 3 pt shot.</div>
+  <div class="card neg">Set the font to 12 pt and the margin to 10 pt.</div>
+  <div class="card neg">Seat 32 F on flight AA 100 to Boston.</div>
+  <div class="card neg">Born in 1999 in Ohio, she moved in 2014.</div>
+
+  <h2>Already metric (silent for metric readers)</h2>
+  <div class="card">The trail is 42 km long and climbs 1,200 m.</div>
+  <div class="card">Oven at 200 °C; the bottle holds 1.5 L.</div>
+  <div class="card">The flat is 90 m² and costs 1,200 a month.</div>
+
+  <h2>Dynamic content</h2>
+  <div class="card">
+    <button id="add">Append more measurements</button>
+    <div id="sink"></div>
+  </div>
+  <script>
+    const samples = [
+      'Injected later: a 15 mile drive at 70 mph.',
+      'Injected later: 3 gallons at 85°F.',
+      'Injected later: a 500 sq ft studio, 12 ft ceilings.'
+    ];
+    let i = 0;
+    document.getElementById('add').addEventListener('click', () => {
+      const p = document.createElement('p');
+      p.textContent = samples[i++ % samples.length];
+      document.getElementById('sink').appendChild(p);
+    });
+  </script>
+</body>
+</html>

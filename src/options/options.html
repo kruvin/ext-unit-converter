@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Unit Lens — Settings</title>
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <div class="brand"><span class="dot"></span><h1>Unit Lens</h1></div>
+      <p>Measurements on the web get a hover tooltip in the units you actually know.</p>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>Your measurement system</h2>
+        <p class="sub">Pick the system you read fluently. Anything foreign gets converted.</p>
+        <div class="systems" id="systems"></div>
+      </section>
+
+      <section class="card">
+        <div class="row-head">
+          <div>
+            <h2>Categories</h2>
+            <p class="sub">Turn categories off, or send each one to a different system.</p>
+          </div>
+          <button class="ghost sm" id="allOn">Enable all</button>
+        </div>
+        <div class="cats" id="cats"></div>
+      </section>
+
+      <section class="card">
+        <h2>Display</h2>
+        <div class="grid">
+          <label class="field">
+            <span>Trigger</span>
+            <select id="trigger">
+              <option value="hover">Show on hover</option>
+              <option value="click">Show on click</option>
+              <option value="inline">Always show inline</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Precision</span>
+            <select id="precision">
+              <option value="auto">Automatic</option>
+              <option value="0">0 decimals</option>
+              <option value="1">1 decimal</option>
+              <option value="2">2 decimals</option>
+              <option value="3">3 decimals</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Highlight style</span>
+            <select id="underline">
+              <option value="dotted">Dotted underline</option>
+              <option value="dashed">Dashed underline</option>
+              <option value="solid">Solid underline</option>
+              <option value="none">Subtle background</option>
+            </select>
+          </label>
+        </div>
+        <div class="checks">
+          <label class="check"><input type="checkbox" id="compoundOutput" /><span>Use natural compounds (5 ft 11 in, 11 st 4 lb)</span></label>
+          <label class="check"><input type="checkbox" id="showOriginal" /><span>Show the original value in the tooltip</span></label>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Live preview</h2>
+        <p class="sub">Edit the text — detection runs on it exactly as it would on a page.</p>
+        <textarea id="previewIn" rows="4"></textarea>
+        <div class="preview" id="previewOut"></div>
+      </section>
+
+      <section class="card">
+        <h2>Sites</h2>
+        <label class="field">
+          <span>List behaviour</span>
+          <select id="siteMode">
+            <option value="all">Run everywhere except the list below</option>
+            <option value="allowlist">Run only on the sites listed below</option>
+          </select>
+        </label>
+        <textarea id="blocklist" rows="4" placeholder="one domain per line&#10;example.com&#10;docs.internal.dev"></textarea>
+      </section>
+
+      <section class="card">
+        <div class="row-head">
+          <div>
+            <h2>Supported units</h2>
+            <p class="sub" id="unitCount"></p>
+          </div>
+          <button class="ghost sm" id="toggleRef">Show</button>
+        </div>
+        <div class="ref" id="ref" hidden></div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <span id="status" aria-live="polite"></span>
+      <button class="ghost sm" id="reset">Reset to defaults</button>
+    </footer>
+  </div>
+
+  <script src="../lib/units.js"></script>
+  <script src="../lib/detect.js"></script>
+  <script src="../lib/convert.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>
